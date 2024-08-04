@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+.contain{
+    display: flex;
+}
+.main-container{
+    
+    
+    width: 100%;
+    
+    
+    color: white;
+    display: flex;
+    
+    
+
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    
+    max-width: 90%;
+    
+    
+}
+
+.sidebar{
+    
+    color: white;
+    background-color: black;
+    min-height: 100vh;
+    height: auto;
+    
+    
+    
+}
+.main2{
+    margin: 0 auto;
+    
+    padding: 10px;
+    width: 100%;
+    overflow: auto;
+    background-color:rgb(39, 38, 38) ;
+    
+}
+main{
+    width: 100px;
+    background-color: black;
+    
+    display: flex;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+}
+.top_section{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    padding: 15px 25px;
+    
+}
+.logo{
+    font-size: 5rem;
+    cursor: pointer;
+    transition: all 1s;
+}
+.logo:hover{
+    transition: all 1s;
+    transform: scale(1.05);
+
+}
+.bars{
+    font-size: 2rem;
+    transition: all 1s;
+    cursor: pointer;
+    padding: 1rem;
+    
+    justify-content: center;
+    transition: 1s ease-in;
+    
+
+}
+
+.routes{
+    display:flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    
+    gap: 1rem;
+    cursor: pointer;
+    
+    
+}
+.link{
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    border-right: 4px solid transparent;
+    gap: 2rem;
+    
+}
+.linktohome{
+    color: wheat;
+}
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    transition:  1s ease-in;
+
+}
+.link_text{
+    transition: 1s ease-in;
+
+    
+    
+
+}
+
+.link_text:hover{
+    width: 100%;
+    color: rgb(143, 58, 58);
+    transition: all 1s;
+    transform: scale(1.05);
+}
+.icon:hover{
+    width: 100%;
+    color: rgb(143, 58, 58);
+    transition: all 1s;
+    transform: scale(1.2);
+    
+
+}
+.just_text{
+    display: none;
+}
+.small-logo{
+    display: none;
+}
+.cricket-container{
+    display: flex;
+}
