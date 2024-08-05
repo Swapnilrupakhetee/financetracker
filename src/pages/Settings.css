@@ -1,0 +1,64 @@
+
+.settings-content{
+    display: flex;
+    gap: 4rem;
+}
+
+.settings-left{
+    width: fit-content;
+    
+}
+.profile-picture{
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.profile-picture img{
+    border-radius: 50%;
+    width: 300px;
+    
+}
+.profile-name-settings{
+    font-size: 32px;
+    padding: 1rem 2rem;
+}
+.profile-email{
+    font-size: 16px;
+    padding: 0rem 2rem;
+    text-align: center;
+}
+.profile-logout{
+    font-size: 16px;
+    
+    padding: 1rem 2rem;
+    background-color: rgb(241, 54, 54);
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    border-radius: 4px;
+    margin: 0 auto;
+    transition: 0.4s ease-in-out;
+    
+}
+.profile-logout:hover{
+    background-color: rgb(204, 27, 27);
+    transition: 0.4s ease-in-out;
+}
+.spacing{
+    padding-top: 4rem;
+}
+
+.setting-item-value{
+    padding: 1rem;
+    color: white;
+}
+.setting-item-name{
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+.setting-item-value{
+    padding: 0rem 2rem;
+}
