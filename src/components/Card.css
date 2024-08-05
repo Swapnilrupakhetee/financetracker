@@ -1,0 +1,69 @@
+.card-container
+{
+    padding: 1rem 2rem;
+}
+.card-content{
+    background-color: rgb(70, 70, 70);
+    min-width: 250px;
+    max-width: 300px;
+    
+    border-radius: 7px;
+}
+.card-top{
+    display: flex;
+    width: 100%;
+    background-color: rgb(70, 70, 70);
+    flex-direction: column;
+    gap: 5px;
+    padding: 1rem;
+    border-radius: 7px;
+}
+.card-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-bottom{
+    display: flex;
+    width: 100%;
+    background-color: rgb(99, 99, 99);
+    flex-direction: column;
+    gap: 5px;
+    padding: 1rem;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    background-image: url('../assets//balance.jpg');
+    
+
+    
+}
+.card-amount{
+    font-size: 32px;
+}
+.card-percentage{
+    color: rgb(209, 209, 209);
+}
+@media (min-width: 0px) and (max-width: 522px) {
+    .card-container
+{
+    padding: 1rem 0rem;
+  
+    padding-right: 28px;
+}
+    
+}
+@media (min-width:522px) and (max-width:760px) {
+    .card-content {
+        background-color: rgb(70, 70, 70);
+        min-width: 150px;
+        max-width: 300px;
+        border-radius: 7px;
+    }
+}
+@media (min-width:522px) and (max-width:558px) {
+    .card-content {
+        background-color: rgb(70, 70, 70);
+        width: 95%;
+        border-radius: 7px;
+    }
+}

@@ -1,0 +1,25 @@
+.overview-content{
+
+}
+.overview-title{
+    padding: 1rem 2rem;
+}
+.overview-main-text{
+    font-size: 18px;
+}
+.overview-sub-text{
+    font-size: 12px;
+    color: rgb(201, 201, 201);
+}
+@media (min-width: 0px) and (max-width: 522px) {
+    .overview-title{
+        padding: 1rem 0rem;
+    }
+}
+.overview-stats{
+    display: flex;
+    gap: 5px;
+    overflow: hidden;
+    align-items: center;
+    flex-wrap: wrap;
+}
