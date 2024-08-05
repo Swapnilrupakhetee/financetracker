@@ -1,0 +1,18 @@
+.transaction-title{
+    font-size: 32px;
+    padding: 1rem 2rem;
+}
+.transaction-table-container{
+    padding: 1rem 2rem;
+}
+@media (min-width:0px) and (max-width:522px) {
+   
+    .transaction-title{
+        font-size: 32px;
+        padding: 0rem;
+    }
+    .transaction-table-container{
+        padding:0rem;
+    }
+
+}
