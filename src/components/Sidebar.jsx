@@ -21,11 +21,6 @@ function Sidebar({ children }) {
             icon: <GrTransaction />
         },
         {
-            path: '/summary',
-            name: 'Summary',
-            icon: <FiBarChart />
-        },
-        {
             path: '/settings',
             name: 'Settings',
             icon: <IoSettingsOutline />
