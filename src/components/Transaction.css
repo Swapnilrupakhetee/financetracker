@@ -6,6 +6,14 @@
 .transaction-title1{
     font-size: 32px;
     padding: 1rem 2rem;
+    color: black;
+    
+    
+}
+.transaction-title1.dark-mode{
+    font-size: 32px;
+    padding: 1rem 2rem;
+    color: rgb(255, 255, 255);
     
     
 }

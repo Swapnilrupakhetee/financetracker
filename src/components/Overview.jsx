@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Overview.css'
 import Card from './Card'
 import { CiWallet } from "react-icons/ci";
 import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
 import { BsBoxArrowInDownLeft } from "react-icons/bs";
+import { SettingContext } from '../Context/SettingsContext';
 
 const Overview = () => {
+  const{darkMode}=useContext(SettingContext);
+
   const cardValues=[
     {icon:<CiWallet size={30} />,
     title:'Balance',
@@ -30,8 +33,8 @@ const Overview = () => {
     <div className="overview-container">
         <div className="overview-content">
             <div className="overview-title">
-                <div className="overview-main-text">Overview</div>
-                <div className="overview-sub-text">Your transaction amount</div>
+                <div className={`overview-main-text${darkMode?'dark-mode':""}`}>Overview</div>
+                <div className={`overview-sub-text${darkMode?'dark-mode':""}`}>Your transaction amount</div>
             </div>
             <div className="overview-stats">
               {

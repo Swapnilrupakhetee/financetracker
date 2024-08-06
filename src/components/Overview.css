@@ -6,10 +6,15 @@
 }
 .overview-main-text{
     font-size: 18px;
+    color: black;
+    font-weight: 500;
+}
+.overview-main-text.dark-mode{
+    color: white;
 }
 .overview-sub-text{
     font-size: 12px;
-    color: rgb(201, 201, 201);
+    color: rgb(109, 109, 109);
 }
 @media (min-width: 0px) and (max-width: 522px) {
     .overview-title{
