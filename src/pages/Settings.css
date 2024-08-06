@@ -1,4 +1,6 @@
-
+.settings-container{
+    color: black;
+}
 .settings-content{
     display: flex;
     gap: 4rem;
@@ -22,6 +24,7 @@
 .profile-name-settings{
     font-size: 32px;
     padding: 1rem 2rem;
+    color: black;
 }
 .profile-email{
     font-size: 16px;
@@ -119,3 +122,4 @@
         padding-left: 0rem;
     }
 }
+/* Settings.css */

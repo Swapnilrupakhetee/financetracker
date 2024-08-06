@@ -1,5 +1,21 @@
 body,html{
     padding: 0;
     margin: 0;
+    
     font-family: 'Poppins', sans-serif;
+    background-color: rgb(250, 250, 250);
 }
+body.dark-mode {
+    background-color: #232323;
+    color: white;
+  }
+  .profile-name-settings.dark-mode {
+    color: rgb(255, 255, 255);
+
+  }
+  .settings-container.dark-mode{
+    color: rgb(255, 255, 255);
+}
+  
+  /* Additional styles for other elements in dark mode */
+  

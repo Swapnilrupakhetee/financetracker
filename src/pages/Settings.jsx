@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { IoSettingsOutline } from 'react-icons/io5';
 import profile from '../assets/profile.jpeg';
-import { Select, MenuItem, FormControl, InputLabel, Switch, FormControlLabel } from '@mui/material';
+import { Select, MenuItem, FormControl, FormControlLabel, Switch } from '@mui/material';
 import './Settings.css';
+import { SettingContext } from '../Context/SettingsContext';
 
 const Settings = () => {
-  const [currency, setCurrency] = useState('USD');
-  const [language, setLanguage] = useState('English');
-  const [darkMode, setDarkMode] = useState(false);
+  const { currency, setCurrency, language, setLanguage, darkMode, setDarkMode } = useContext(SettingContext);
 
   const handleCurrencyChange = (event) => {
     setCurrency(event.target.value);
@@ -31,7 +30,7 @@ const Settings = () => {
           <div className="profile-picture">
             <img src={profile} alt="Profile" />
           </div>
-          <div className="profile-name-settings">Swapnil Rupakhetee</div>
+          <div className={`profile-name-settings ${darkMode ? 'dark-mode' : ''}`}>Swapnil Rupakhetee</div>
           <div className="profile-email">swapnilrupakhetee@gmail.com</div>
           <div className="spacing">
             <div className="profile-logout">Logout</div>
@@ -41,11 +40,10 @@ const Settings = () => {
           <div className="transaction-title">Account Settings</div>
           <div className="setting-items">
             <div className="setting-item">
-              
+              <div className="setting-item-name">Currency</div>
               <div className="setting-item-value">
-                <FormControl fullWidth variant="outlined" style={{border:'1px solid white',borderRadius:'4px'}}>
-                  
-                  <Select value={currency} onChange={handleCurrencyChange} label="Currency" style={{color:'white'}}>
+                <FormControl fullWidth variant="outlined" style={{ border: darkMode ? '1px solid white' : '1px solid black', borderRadius: '4px' }}>
+                  <Select value={currency} onChange={handleCurrencyChange} label="Currency" style={{ color: darkMode ? 'white' : 'black' }}>
                     <MenuItem value="USD">USD</MenuItem>
                     <MenuItem value="EUR">EUR</MenuItem>
                     <MenuItem value="GBP">GBP</MenuItem>
@@ -56,11 +54,10 @@ const Settings = () => {
               </div>
             </div>
             <div className="setting-item">
-             
+              <div className="setting-item-name">Language</div>
               <div className="setting-item-value">
-                <FormControl fullWidth  style={{border:'1px solid white',borderRadius:'4px'}}>
-                  
-                  <Select value={language} onChange={handleLanguageChange} label="Language" style={{color:'white'}}>
+                <FormControl fullWidth style={{ border: darkMode ? '1px solid white' : '1px solid black', borderRadius: '4px' }}>
+                  <Select value={language} onChange={handleLanguageChange} label="Language" style={{ color: darkMode ? 'white' : 'black' }}>
                     <MenuItem value="English">English</MenuItem>
                     <MenuItem value="Spanish">Spanish</MenuItem>
                     <MenuItem value="French">French</MenuItem>

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, MenuItem } from '@mui/material';
 import { GrTransaction } from 'react-icons/gr';
+import { SettingContext } from '../Context/SettingsContext';
 
 const initialRows = [
   { id: 1, sender: 'Alice', receiver: 'Bob', amount: 100, category: 'Expense', purpose: 'Birthday', remark: 'Happy Birthday!' },
@@ -12,6 +13,8 @@ const initialRows = [
 ];
 
 const Transactions = () => {
+  const { darkMode } = useContext(SettingContext);
+
   const [rows, setRows] = useState(initialRows);
   const [open, setOpen] = useState(false);
   const [editMode, setEditMode] = useState(false);
@@ -63,7 +66,7 @@ const Transactions = () => {
   return (
     <div className="transactions-container">
       <div className="transactions-content">
-        <div className="transaction-title">Transaction <GrTransaction /></div>
+        <div className={`transaction-title-trans ${darkMode ? 'dark-mode' : ''}`}>Transaction <GrTransaction /></div>
         <div className="transaction-table">
           <Button onClick={() => setOpen(true)}>Add Transaction</Button>
           <Dialog open={open} onClose={() => setOpen(false)}>
@@ -133,21 +136,21 @@ const Transactions = () => {
             components={{ Toolbar: GridToolbar }}
             sx={{
               '& .MuiDataGrid-cell': {
-                color: 'white',
+                color: darkMode ? 'white' : 'black',
               },
               '& .MuiDataGrid-columnHeaders': {
-                backgroundColor: '#333', // Optional: Change header background color
-                color: 'black', // Change header text color
+                backgroundColor: darkMode ? '#333' : '#fff', // Change header background color based on dark mode
+                color: 'black', // Change header text color based on dark mode
               },
               '& .MuiDataGrid-virtualScroller': {
-                backgroundColor: '#222', // Optional: Change background color of the table
+                backgroundColor: darkMode ? '#222' : '#f5f5f5', // Change background color of the table based on dark mode
               },
               '& .MuiDataGrid-footerContainer': {
-                backgroundColor: '#333', // Optional: Change footer background color
-                color: 'white', // Change footer text color
+                backgroundColor: darkMode ? '#333' : '#fff', // Change footer background color based on dark mode
+                color: darkMode ? 'white' : 'black', // Change footer text color based on dark mode
               },
               '& .MuiTablePagination-root': {
-                color: 'white', // Change pagination text color
+                color: darkMode ? 'white' : 'black', // Change pagination text color based on dark mode
               },
             }}
           />

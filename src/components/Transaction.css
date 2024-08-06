@@ -1,6 +1,13 @@
 .transaction-title{
     font-size: 32px;
     padding: 1rem 2rem;
+    
+}
+.transaction-title1{
+    font-size: 32px;
+    padding: 1rem 2rem;
+    
+    
 }
 .transaction-table-container{
     padding: 1rem 2rem;
@@ -8,6 +15,18 @@
 .transaction-table{
     padding: 1rem 2rem;
 }
+.transaction-title-trans{
+    color: black;
+    font-size: 32px;
+    padding: 1rem 2rem;
+}
+.transaction-title-trans.dark-mode{
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    padding: 1rem 2rem;
+}
+
+
 @media (min-width:0px) and (max-width:522px) {
    
     .transaction-title{

@@ -5,11 +5,13 @@ import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
 import Transactions from './pages/Transactions';
 import Settings from './pages/Settings';
+import { SettingsContextProvider } from './Context/SettingsContext';
 
 function App() {
   return (
     
     <>
+    <SettingsContextProvider>
       <Router>
         <Sidebar>
         <Routes>
@@ -21,6 +23,7 @@ function App() {
         </Routes>
         </Sidebar>
       </Router>
+      </SettingsContextProvider>
      
     </>
   );
