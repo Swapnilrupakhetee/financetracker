@@ -31,13 +31,12 @@
     justify-content: center;
     align-items: center;
 }
-.dash-search{
-    background-color: rgb(180, 180, 180);
+.dash-search {
+    background-color: rgb(233, 233, 233);
     border-radius: 10px;
     font-size: 1rem;
     padding: 10px 20px;
     border: none;
-   
 }
 .dash-search:focus{
     border: none;

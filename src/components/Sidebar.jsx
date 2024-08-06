@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { motion } from 'framer-motion';
 import '../components/Sidebar.css';
 import { FaBars } from 'react-icons/fa6';
@@ -7,8 +7,10 @@ import { FiBarChart } from 'react-icons/fi';
 import { GrTransaction } from 'react-icons/gr';
 import { IoSettingsOutline } from 'react-icons/io5';
 import { NavLink } from 'react-router-dom';
+import { SettingContext } from '../Context/SettingsContext';
 
 function Sidebar({ children }) {
+    const{darkMode}=useContext(SettingContext)
     const routes = [
         {
             path: '/',
@@ -60,7 +62,7 @@ function Sidebar({ children }) {
                             damping: 15
                         }
                     }}
-                    className="sidebar"
+                    className={`sidebar ${darkMode?'dark-mode':''}`}
                 >
                     <div className="top_section">
                         <h1 className={isOpen ? 'logo' : 'small-logo'}></h1>
@@ -80,9 +82,9 @@ function Sidebar({ children }) {
                         </motion.div>
                     </div>
                     <main>
-                        <section className="routes">
+                        <section className={`routes ${darkMode?'dark-mode':''}`}>
                             {routes.map((route) => (
-                                <NavLink to={route.path} key={route.name} className="link">
+                                <NavLink to={route.path} key={route.name} className={`link ${darkMode?'dark-mode':''}`}>
                                     <div className="icon">{route.icon}</div>
                                     <div className={isOpen ? 'link_text' : 'just_text'}>{route.name}</div>
                                 </NavLink>

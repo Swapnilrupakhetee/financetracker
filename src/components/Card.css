@@ -69,7 +69,11 @@
 }
 .card-amount{
     font-size: 32px;
-    color: black;
+    color: rgb(0, 0, 0);
+}
+.card-amount.dark-mode{
+    font-size: 32px;
+    color: rgb(255, 255, 255);
 }
 .card-percentage{
     color: rgb(209, 209, 209);
