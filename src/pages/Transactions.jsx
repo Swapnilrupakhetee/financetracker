@@ -4,29 +4,27 @@ import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, M
 import { GrTransaction } from 'react-icons/gr';
 import { SettingContext } from '../Context/SettingsContext';
 import { LanguagesContext } from '../Context/LanguageContext';
-
-const initialRows = [
-  { id: 1, sender: 'Alice', receiver: 'Bob', amount: 100, category: 'Expense', purpose: 'Birthday', remark: 'Happy Birthday!' },
-  { id: 2, sender: 'Alice', receiver: 'Bob', amount: 100, category: 'Income', purpose: 'Birthday', remark: 'Happy Birthday!' },
-  { id: 3, sender: 'Alice', receiver: 'Bob', amount: 100, category: 'Income', purpose: 'Birthday', remark: 'Happy Birthday!' },
-  { id: 4, sender: 'Alice', receiver: 'Bob', amount: 100, category: 'Expense', purpose: 'Birthday', remark: 'Happy Birthday!' },
-  // Add more initial rows here
-];
+import { TransactionContext } from '../Context/TransactionContext';
 
 const Transactions = () => {
   const { darkMode } = useContext(SettingContext);
-  const {language,translations } = useContext(LanguagesContext);
-  const [rows, setRows] = useState(initialRows);
+  const { language, translations } = useContext(LanguagesContext);
+  const { transactions, updateBalance } = useContext(TransactionContext);
   const [open, setOpen] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [currentRow, setCurrentRow] = useState(null);
   const [newTransaction, setNewTransaction] = useState({ sender: '', receiver: '', amount: '', category: '', purpose: '', remark: '' });
 
   const handleAdd = () => {
+    const amount = parseFloat(newTransaction.amount);
+
     if (editMode) {
-      setRows(rows.map((row) => (row.id === currentRow.id ? { ...currentRow, ...newTransaction } : row)));
+      const updatedTransaction = { ...currentRow, ...newTransaction, amount };
+      updateBalance(updatedTransaction, false);
     } else {
-      setRows([...rows, { id: rows.length + 1, ...newTransaction }]);
+      const newId = transactions.length > 0 ? transactions[transactions.length - 1].id + 1 : 1;
+      const newRow = { id: newId, ...newTransaction, amount };
+      updateBalance(newRow, false);
     }
     setOpen(false);
     setNewTransaction({ sender: '', receiver: '', amount: '', category: '', purpose: '', remark: '' });
@@ -34,7 +32,8 @@ const Transactions = () => {
   };
 
   const handleDelete = (id) => {
-    setRows((prevRows) => prevRows.filter((row) => row.id !== id));
+    const rowToDelete = transactions.find(row => row.id === id);
+    updateBalance(rowToDelete, true);
   };
 
   const handleEdit = (row) => {
@@ -129,7 +128,7 @@ const Transactions = () => {
             </DialogActions>
           </Dialog>
           <DataGrid
-            rows={rows}
+            rows={transactions}
             columns={columns}
             pageSize={5}
             rowsPerPageOptions={[5]}
@@ -140,18 +139,18 @@ const Transactions = () => {
                 color: darkMode ? 'white' : 'black',
               },
               '& .MuiDataGrid-columnHeaders': {
-                backgroundColor: darkMode ? '#333' : '#fff', // Change header background color based on dark mode
-                color: 'black', // Change header text color based on dark mode
+                backgroundColor: darkMode ? '#333' : '#fff',
+                color: 'black',
               },
               '& .MuiDataGrid-virtualScroller': {
-                backgroundColor: darkMode ? '#222' : '#f5f5f5', // Change background color of the table based on dark mode
+                backgroundColor: darkMode ? '#222' : '#f5f5f5',
               },
               '& .MuiDataGrid-footerContainer': {
-                backgroundColor: darkMode ? '#333' : '#fff', // Change footer background color based on dark mode
-                color: darkMode ? 'white' : 'black', // Change footer text color based on dark mode
+                backgroundColor: darkMode ? '#333' : '#fff',
+                color: darkMode ? 'white' : 'black',
               },
               '& .MuiTablePagination-root': {
-                color: darkMode ? 'white' : 'black', // Change pagination text color based on dark mode
+                color: darkMode ? 'white' : 'black',
               },
             }}
           />
