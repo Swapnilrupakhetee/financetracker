@@ -3,6 +3,7 @@ import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, MenuItem } from '@mui/material';
 import { GrTransaction } from 'react-icons/gr';
 import { SettingContext } from '../Context/SettingsContext';
+import { LanguagesContext } from '../Context/LanguageContext';
 
 const initialRows = [
   { id: 1, sender: 'Alice', receiver: 'Bob', amount: 100, category: 'Expense', purpose: 'Birthday', remark: 'Happy Birthday!' },
@@ -14,7 +15,7 @@ const initialRows = [
 
 const Transactions = () => {
   const { darkMode } = useContext(SettingContext);
-
+  const {language,translations } = useContext(LanguagesContext);
   const [rows, setRows] = useState(initialRows);
   const [open, setOpen] = useState(false);
   const [editMode, setEditMode] = useState(false);
@@ -66,9 +67,9 @@ const Transactions = () => {
   return (
     <div className="transactions-container">
       <div className="transactions-content">
-        <div className={`transaction-title-trans ${darkMode ? 'dark-mode' : ''}`}>Transaction <GrTransaction /></div>
+        <div className={`transaction-title-trans ${darkMode ? 'dark-mode' : ''}`}>{translations[language].transactions} <GrTransaction /></div>
         <div className="transaction-table">
-          <Button onClick={() => setOpen(true)}>Add Transaction</Button>
+          <Button onClick={() => setOpen(true)}>{translations[language].addTransaction}</Button>
           <Dialog open={open} onClose={() => setOpen(false)}>
             <DialogTitle>{editMode ? 'Edit Transaction' : 'Add Transaction'}</DialogTitle>
             <DialogContent>

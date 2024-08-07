@@ -6,11 +6,14 @@ import Home from './pages/Home';
 import Transactions from './pages/Transactions';
 import Settings from './pages/Settings';
 import { SettingsContextProvider } from './Context/SettingsContext';
+import LanguageProvider from './Context/LanguageContext';
+
 
 function App() {
   return (
     
     <>
+    <LanguageProvider>
     <SettingsContextProvider>
       <Router>
         <Sidebar>
@@ -24,6 +27,8 @@ function App() {
         </Sidebar>
       </Router>
       </SettingsContextProvider>
+      </LanguageProvider>
+      
      
     </>
   );

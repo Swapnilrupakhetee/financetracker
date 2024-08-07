@@ -5,9 +5,15 @@ import { CiWallet } from "react-icons/ci";
 import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
 import { BsBoxArrowInDownLeft } from "react-icons/bs";
 import { SettingContext } from '../Context/SettingsContext';
+import { LanguagesContext } from '../Context/LanguageContext';
 
 const Overview = () => {
   const{darkMode}=useContext(SettingContext);
+  const { language, translations } = useContext(LanguagesContext);
+
+    
+  const currentTranslations = translations[language] || {};
+  
 
   const cardValues=[
     {icon:<CiWallet size={30} />,
@@ -33,8 +39,8 @@ const Overview = () => {
     <div className="overview-container">
         <div className="overview-content">
             <div className="overview-title">
-                <div className={`overview-main-text${darkMode?'dark-mode':""}`}>Overview</div>
-                <div className={`overview-sub-text${darkMode?'dark-mode':""}`}>Your transaction amount</div>
+                <div className={`overview-main-text${darkMode?'dark-mode':""}`}>{currentTranslations.overview}</div>
+                <div className={`overview-sub-text${darkMode?'dark-mode':""}`}>{currentTranslations.transactionAmount}</div>
             </div>
             <div className="overview-stats">
               {
