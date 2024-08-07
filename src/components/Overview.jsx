@@ -17,19 +17,19 @@ const Overview = () => {
 
   const cardValues=[
     {icon:<CiWallet size={30} />,
-    title:'Balance',
+    title:'balance',
     amount:'1655',
     percentage:'12%'
     }
     ,
     {icon:<BsBoxArrowInDownLeft size={30} />,
-    title:'Income',
+    title:'income',
     amount:'900',
     percentage:'9%'
     }
     ,
     {icon:<HiOutlineArrowTopRightOnSquare size={30} />,
-    title:'Expense',
+    title:'expense',
     amount:'450',
     percentage:'9%'
     }

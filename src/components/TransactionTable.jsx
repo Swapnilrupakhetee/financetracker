@@ -43,23 +43,23 @@ function createData(sender, receiver, amount, category, purpose, remark) {
 }
 
 const rows = [
-  createData('Alice', 'Bob', 1000, 'Gift', 'Birthday', 'None'),
-  createData('John', 'Doe', 1500, 'Loan', 'Personal', 'Repay next month'),
-  createData('Anna', 'Smith', 2000, 'Salary', 'Monthly', 'On time'),
-  createData('James', 'Brown', 2500, 'Rent', 'Monthly', 'Paid'),
-  createData('David', 'Wilson', 3000, 'Donation', 'Charity', 'Generous'),
-  createData('Alice', 'Bob', 1000, 'Gift', 'Birthday', 'None'),
-  createData('John', 'Doe', 1500, 'Loan', 'Personal', 'Repay next month'),
-  createData('Anna', 'Smith', 2000, 'Salary', 'Monthly', 'On time'),
-  createData('James', 'Brown', 2500, 'Rent', 'Monthly', 'Paid'),
-  createData('David', 'Wilson', 3000, 'Donation', 'Charity', 'Generous'),
-  createData('Alice', 'Bob', 1000, 'Gift', 'Birthday', 'None'),
-  createData('John', 'Doe', 1500, 'Loan', 'Personal', 'Repay next month'),
-  createData('Anna', 'Smith', 2000, 'Salary', 'Monthly', 'On time'),
-  createData('James', 'Brown', 2500, 'Rent', 'Monthly', 'Paid'),
-  createData('David', 'Wilson', 3000, 'Donation', 'Charity', 'Generous'),
-  // Add more rows as needed
+  createData('Alice', 'Bob', 1000, 'Income', 'Salary', 'None'),
+  createData('John', 'Doe', 1500, 'Expense', 'Rent', 'Repay next month'),
+  createData('Anna', 'Smith', 2000, 'Savings', 'Investments', 'On time'),
+  createData('James', 'Brown', 2500, 'Income', 'Bonus', 'Paid'),
+  createData('David', 'Wilson', 3000, 'Expense', 'Donation', 'Generous'),
+  createData('Alice', 'Bob', 1000, 'Income', 'Salary', 'None'),
+  createData('John', 'Doe', 1500, 'Expense', 'Rent', 'Repay next month'),
+  createData('Anna', 'Smith', 2000, 'Savings', 'Investments', 'On time'),
+  createData('James', 'Brown', 2500, 'Income', 'Bonus', 'Paid'),
+  createData('David', 'Wilson', 3000, 'Expense', 'Donation', 'Generous'),
+  createData('Alice', 'Bob', 1000, 'Income', 'Salary', 'None'),
+  createData('John', 'Doe', 1500, 'Expense', 'Rent', 'Repay next month'),
+  createData('Anna', 'Smith', 2000, 'Savings', 'Investments', 'On time'),
+  createData('James', 'Brown', 2500, 'Income', 'Bonus', 'Paid'),
+  createData('David', 'Wilson', 3000, 'Expense', 'Donation', 'Generous'),
 ];
+
 
 const scrollbarStyles = css`
   &::-webkit-scrollbar {

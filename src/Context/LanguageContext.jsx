@@ -19,7 +19,10 @@ const LanguageProvider = ({ children }) => {
             language: 'Language',
             darkMode: 'Dark Mode',
             addTransaction: 'Add Transaction',
-            logout: 'Logout' // Added translation
+            logout: 'Logout',
+            balance: 'Balance',
+            income: 'Income',
+            expense: 'Expense'
         },
         Spanish: { 
             greeting: 'Buenos días', 
@@ -35,7 +38,10 @@ const LanguageProvider = ({ children }) => {
             language: 'Idioma',
             darkMode: 'Modo oscuro',
             addTransaction: 'Agregar transacción',
-            logout: 'Cerrar sesión' // Added translation
+            logout: 'Cerrar sesión',
+            balance: 'Saldo',
+            income: 'Ingresos',
+            expense: 'Gastos'
         },
         French: { 
             greeting: 'Bonjour', 
@@ -51,7 +57,10 @@ const LanguageProvider = ({ children }) => {
             language: 'Langue',
             darkMode: 'Mode sombre',
             addTransaction: 'Ajouter une transaction',
-            logout: 'Se déconnecter' // Added translation
+            logout: 'Se déconnecter',
+            balance: 'Solde',
+            income: 'Revenu',
+            expense: 'Dépense'
         },
         German: { 
             greeting: 'Guten Morgen', 
@@ -67,7 +76,10 @@ const LanguageProvider = ({ children }) => {
             language: 'Sprache',
             darkMode: 'Dunkelmodus',
             addTransaction: 'Transaktion hinzufügen',
-            logout: 'Abmelden' // Added translation
+            logout: 'Abmelden',
+            balance: 'Guthaben',
+            income: 'Einkommen',
+            expense: 'Ausgabe'
         },
         Nepali: { 
             greeting: 'शुभ प्रभात', 
@@ -83,7 +95,10 @@ const LanguageProvider = ({ children }) => {
             language: 'भाषा',
             darkMode: 'अंधकार मोड',
             addTransaction: 'लेनदेन थप्नुहोस्',
-            logout: 'लगआउट' // Added translation
+            logout: 'लगआउट',
+            balance: 'सन्तुलन',
+            income: 'आय',
+            expense: 'खर्च'
         }
     };
     
