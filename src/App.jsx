@@ -7,12 +7,14 @@ import Transactions from './pages/Transactions';
 import Settings from './pages/Settings';
 import { SettingsContextProvider } from './Context/SettingsContext';
 import LanguageProvider from './Context/LanguageContext';
+import CurrencyProvider from './Context/CurrencyContext';
 
 
 function App() {
   return (
     
     <>
+    <CurrencyProvider>
     <LanguageProvider>
     <SettingsContextProvider>
       <Router>
@@ -28,6 +30,7 @@ function App() {
       </Router>
       </SettingsContextProvider>
       </LanguageProvider>
+      </CurrencyProvider>
       
      
     </>

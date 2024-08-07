@@ -6,7 +6,9 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import balance from '../assets/balance.jpg'
 import { SettingContext } from '../Context/SettingsContext';
 import { LanguagesContext } from '../Context/LanguageContext';
+import { CurrenciesContext } from '../Context/CurrencyContext';
 const Card = ({icon,title,amount,percentage}) => {
+    const {currencies,currency}=useContext(CurrenciesContext);
     const{darkMode}=useContext(SettingContext)
     const{language,translations}=useContext(LanguagesContext)
   return (
@@ -20,7 +22,7 @@ const Card = ({icon,title,amount,percentage}) => {
                 <div className="card-title">{translations[language][title]}</div>
             </div>
             <div className={`card-bottom ${darkMode?'dark-mode':''}`}>
-                <div className={`card-amount ${darkMode?'dark-mode':''}`}>Rs.{amount}</div>
+                <div className={`card-amount ${darkMode?'dark-mode':''}`}>{currencies[currency].symbol} {amount}</div>
                 <div className={`card-percentage ${darkMode?'dark-mode':''}`}>{percentage} <FaArrowTrendUp /></div>
             </div>
         </div>

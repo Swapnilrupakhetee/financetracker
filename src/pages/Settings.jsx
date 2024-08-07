@@ -5,10 +5,12 @@ import { Select, MenuItem, FormControl, FormControlLabel, Switch } from '@mui/ma
 import './Settings.css';
 import { SettingContext } from '../Context/SettingsContext';
 import { LanguagesContext } from '../Context/LanguageContext';
+import { CurrenciesContext } from '../Context/CurrencyContext';
 
 const Settings = () => {
-  const { currency, setCurrency, darkMode, setDarkMode } = useContext(SettingContext);
+  const { darkMode, setDarkMode } = useContext(SettingContext);
   const { language, setLanguage, translations } = useContext(LanguagesContext);
+  const {currency,setCurrency,currencies}=useContext(CurrenciesContext);
 
   const handleCurrencyChange = (event) => {
     setCurrency(event.target.value);
