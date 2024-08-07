@@ -28,7 +28,7 @@ const Card = ({ icon, title, amount, percentage }) => {
         </div>
         <div className={`card-bottom ${darkMode ? 'dark-mode' : ''}`}>
           <div className={`card-amount ${darkMode ? 'dark-mode' : ''}`}>
-            {currencySymbol} {amount.toFixed(2)}
+            {currencySymbol} {amount}
           </div>
           <div className={`card-percentage ${darkMode ? 'dark-mode' : ''}`}>
             <FaArrowTrendUp />

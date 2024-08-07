@@ -1,4 +1,3 @@
-// Overview.js
 import React, { useContext } from 'react';
 import './Overview.css';
 import Card from './Card';
@@ -16,33 +15,42 @@ const Overview = () => {
 
   const currentTranslations = translations[language] || {};
 
-  const totalBalance = transactions.reduce((acc, transaction) => acc + transaction.amount, 0);
-  const totalIncome = transactions.filter(t => t.category === 'Income').reduce((acc, t) => acc + t.amount, 0);
-  const totalExpense = transactions.filter(t => t.category === 'Expense').reduce((acc, t) => acc + t.amount, 0);
+  // Calculate total income and total expense
+  const totalIncome = transactions
+    .filter(t => t.category === 'Income')
+    .reduce((acc, t) => acc + t.amount, 0);
+    
+  const totalExpense = transactions
+    .filter(t => t.category === 'Expense')
+    .reduce((acc, t) => acc + t.amount, 0);
 
-  // You can adjust these percentages based on your needs
-  const balancePercentage = '12%';
-  const incomePercentage = '9%';
-  const expensePercentage = '9%';
+  // Calculate total balance as income - expenses
+  const totalBalance = totalIncome - totalExpense;
 
+  // Log calculated values for debugging
+  console.log('Total Balance:', totalBalance);
+  console.log('Total Income:', totalIncome);
+  console.log('Total Expense:', totalExpense);
+
+  // Define card values with placeholder percentages
   const cardValues = [
     {
       icon: <CiWallet size={30} />,
       title: 'balance',
       amount: totalBalance,
-      percentage: balancePercentage,
+      percentage: '12%',
     },
     {
       icon: <BsBoxArrowInDownLeft size={30} />,
       title: 'income',
       amount: totalIncome,
-      percentage: incomePercentage,
+      percentage: '9%',
     },
     {
       icon: <HiOutlineArrowTopRightOnSquare size={30} />,
       title: 'expense',
       amount: totalExpense,
-      percentage: expensePercentage,
+      percentage: '9%',
     },
   ];
 
@@ -50,13 +58,22 @@ const Overview = () => {
     <div className="overview-container">
       <div className="overview-content">
         <div className="overview-title">
-          <div className={`overview-main-text${darkMode ? 'dark-mode' : ''}`}>{currentTranslations.overview}</div>
-          <div className={`overview-sub-text${darkMode ? 'dark-mode' : ''}`}>{currentTranslations.transactionAmount}</div>
+          <div className={`overview-main-text${darkMode ? ' dark-mode' : ''}`}>
+            {currentTranslations.overview}
+          </div>
+          <div className={`overview-sub-text${darkMode ? ' dark-mode' : ''}`}>
+            {currentTranslations.transactionAmount}
+          </div>
         </div>
         <div className="overview-stats">
           {cardValues.map((value, index) => (
             <div key={index}>
-              <Card icon={value.icon} title={value.title} amount={value.amount} percentage={value.percentage} />
+              <Card
+                icon={value.icon}
+                title={value.title}
+                amount={value.amount}
+                percentage={value.percentage}
+              />
             </div>
           ))}
         </div>

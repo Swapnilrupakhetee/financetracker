@@ -33,7 +33,9 @@ const Transactions = () => {
 
   const handleDelete = (id) => {
     const rowToDelete = transactions.find(row => row.id === id);
-    updateBalance(rowToDelete, true);
+    if (rowToDelete) {
+      updateBalance(rowToDelete, true);
+    }
   };
 
   const handleEdit = (row) => {
